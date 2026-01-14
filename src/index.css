@@ -91,7 +91,8 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
-}
+
+body {
   color: var(--text-primary);
   background: linear-gradient(135deg, var(--bg-cream) 0%, var(--bg-light-beige) 100%);
   background-attachment: fixed;
