@@ -1,5 +1,10 @@
-/* index.css - ClubConnect Pastel Design System */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+
+body, h1, h2, h3, h4, h5, h6, .navbar, .navbar-links a, button, .btn, .sidebar-logo {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+/* index.css - ClubConnect Pastel Design System */
+/* Font import removed; handled in index.html for GitHub Pages reliability */
 * {
   margin: 0;
   padding: 0;
