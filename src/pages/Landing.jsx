@@ -80,10 +80,10 @@ const Landing = () => {
           <div className="logo">🏫 Club-Connect</div>
           <nav>
             <ul>
-              <li><a href="#features">Features</a></li>
-              <li><a href="#testimonials">Testimonials</a></li>
-              <li><Link to="/app/login">Sign in</Link></li>
-              <li><Link to="/app/register" className="btn">Sign up</Link></li>
+              <li><a href="#features" className="nav-link">Features</a></li>
+              <li><a href="#testimonials" className="nav-link">Testimonials</a></li>
+              <li><Link to="/app/login" className="btn outline">Sign in</Link></li>
+              <li><Link to="/app/register" className="btn primary">Sign up</Link></li>
             </ul>
           </nav>
         </div>

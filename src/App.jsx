@@ -102,7 +102,7 @@ function AppContent() {
       <Sidebar />
       <div className="main-content">
         <Outlet />
-      </div>
+  hh    </div>
       <NavigationChatbot />
       <AccessibilityChatbot />
       <Navbar />
