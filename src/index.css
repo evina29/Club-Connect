@@ -12,40 +12,43 @@ body, h1, h2, h3, h4, h5, h6, .navbar, .navbar-links a, button, .btn, .sidebar-l
 }
 
 :root {
-  /* Primary Colors */
+  /* Techy & Academic Color Scheme */
+  --deep-navy: #1A2233;
+  --charcoal: #23272F;
+  --cool-gray: #F4F6FA;
+  --soft-silver: #E5E8EF;
   --vibrant-green: #7ED957;
-  --soft-blue: #6EB5FF;
-  --warm-yellow: #FFE066;
-  --pastel-pink: #FF9AA2;
+  --bright-blue: #3A8DFF;
+  --white: #FFFFFF;
   
   /* Background Colors */
-  --bg-primary: #F9F9F9;
-  --bg-secondary: #FFFFFF;
-  --bg-cream: #FFF8F0;
-  --bg-light-beige: #FEFDFB;
+  --bg-primary: var(--cool-gray);
+  --bg-secondary: var(--white);
+  --bg-header: var(--deep-navy);
+  --bg-card: var(--white);
   
   /* Text Colors */
-  --text-primary: #333333;
-  --text-secondary: #666666;
-  --text-tertiary: #999999;
-  --text-white: #FFFFFF;
+  --text-primary: var(--charcoal);
+  --text-secondary: #4B5563;
+  --text-tertiary: #7B8494;
+  --text-white: var(--white);
   
-  /* Hover & Active States */
+  /* Accent & States */
+  --accent: var(--bright-blue);
+  --accent-hover: #2563EB;
   --green-hover: #6FC748;
-  --blue-hover: #5BA3ED;
-  --yellow-hover: #F5D055;
-  --pink-hover: #FF8891;
+  --blue-hover: #2563EB;
   
   /* Borders & Dividers */
-  --border-color: #E5E5E5;
+  --border-color: var(--soft-silver);
   --border-light: #F0F0F0;
   
   /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
-  --shadow-button: 0 4px 12px rgba(126, 217, 87, 0.25);
-  --shadow-card: 0 2px 20px rgba(0, 0, 0, 0.08);
+  --shadow-sm: 0 2px 8px rgba(26, 34, 51, 0.08);
+  --shadow-md: 0 4px 16px rgba(26, 34, 51, 0.12);
+  --shadow-lg: 0 8px 24px rgba(26, 34, 51, 0.15);
+  --shadow-button: 0 4px 12px rgba(58, 141, 255, 0.15);
+  --shadow-card: 0 2px 20px rgba(26, 34, 51, 0.08);
   
   /* Border Radius */
   --radius-sm: 8px;
