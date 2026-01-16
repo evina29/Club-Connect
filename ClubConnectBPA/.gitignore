@@ -1,0 +1,49 @@
+node_modules/
+.expo/
+.expo-shared/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+dist/
+
+# macOS
+.DS_Store
+
+# Android
+/android/app/build/
+/android/app/release/
+/android/.gradle
+/android/build/
+
+# iOS
+/ios/Pods/
+/ios/build/
+*.xcworkspace
+*.xcuserstate
+
+# Firebase
+google-services.json
+GoogleService-Info.plist
+
+# Environment
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+logs/
+*.log
+
+# Testing
+coverage/

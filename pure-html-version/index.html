@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClubConnect</title>
+  <link rel="icon" type="image/svg+xml" href="vite.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="landing-navbar" role="banner">
+    <div class="container">
+      <div class="logo">🏫 Club-Connect</div>
+      <nav>
+        <ul>
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+          <li><a href="#login" class="btn outline">Sign in</a></li>
+          <li><a href="#register" class="btn primary">Sign up</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <h1>The future of student clubs happens together</h1>
+        <p>Student connection endures. Club-Connect brings students, clubs, and opportunities together in one simple platform.</p>
+        <div class="hero-actions">
+          <a href="#register" class="btn primary">Sign up for ClubConnect</a>
+          <a href="#login" class="btn outline">Sign in</a>
+          <button class="btn outline" id="tourBtn" aria-haspopup="dialog">Take a quick tour</button>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="false">
+        <svg width="100%" height="100%" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="illustrationTitle illustrationDesc">
+          <title id="illustrationTitle">Club-Connect illustration</title>
+          <desc id="illustrationDesc">Stylized illustration of students collaborating around clubs and events.</desc>
+          <rect x="0" y="0" width="100%" height="100%" fill="#F5F7FB"/>
+          <g transform="translate(40,40)">
+            <circle cx="80" cy="80" r="48" fill="#7ED957" opacity="0.15" />
+            <rect x="150" y="40" width="220" height="120" rx="12" fill="#fff" stroke="#E6EEF8" />
+            <circle cx="210" cy="100" r="28" fill="#6EB5FF" opacity="0.18" />
+            <rect x="200" y="220" width="280" height="120" rx="12" fill="#fff" stroke="#E6EEF8" />
+            <text x="170" y="110" font-size="18" fill="#0b1220">Discover clubs</text>
+            <text x="210" y="260" font-size="18" fill="#0b1220">Events & RSVP</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+    <!-- Features, Testimonials, FAQ, CTA, Footer sections go here (copy from JSX as HTML) -->
+  </main>
+
+  <div class="modal-overlay" id="tourModal" style="display:none;" role="dialog" aria-modal="true" aria-label="Product tour">
+    <div class="modal">
+      <button class="modal-close" aria-label="Close tour" id="closeTourBtn">&times;</button>
+      <div class="modal-content">
+        <h3>Quick tour</h3>
+        <div class="tour-slide">
+          <h4>Discover clubs</h4>
+          <p>Search, filter, and join clubs in seconds.</p>
+        </div>
+        <div class="tour-slide">
+          <h4>Manage events</h4>
+          <p>Track events, RSVP, and get reminders.</p>
+        </div>
+        <div class="tour-slide">
+          <h4>Track participation</h4>
+          <p>Earn badges and view your activity history.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

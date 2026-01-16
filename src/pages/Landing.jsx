@@ -3,6 +3,14 @@ import { Link } from 'react-router-dom';
 import './Landing.css';
 
 const Landing = () => {
+      const [navOpen, setNavOpen] = useState(false);
+    // Enable smooth scrolling for anchor links
+    useEffect(() => {
+      document.documentElement.style.scrollBehavior = 'smooth';
+      return () => {
+        document.documentElement.style.scrollBehavior = '';
+      };
+    }, []);
   const [openFaq, setOpenFaq] = useState(null);
 
   const toggleFaq = (index) => {
@@ -76,14 +84,26 @@ const Landing = () => {
     <>
       <a className="skip-link" href="#main">Skip to content</a>
       <header className="landing-navbar" role="banner">
-        <div className="container">
+        <div className="container" style={{position: 'relative'}}>
           <div className="logo">🏫 Club-Connect</div>
-          <nav>
+          {/* Hamburger icon for mobile */}
+          <button className="hamburger" aria-label="Open navigation" onClick={() => setNavOpen(true)}>
+            <span className="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
+          </button>
+          {/* Side drawer nav */}
+          <nav className={`mobile-nav${navOpen ? ' open' : ''}`}> 
+            <button className="close-nav" aria-label="Close navigation" onClick={() => setNavOpen(false)}>&times;</button>
             <ul>
-              <li><a href="#features" className="nav-link">Features</a></li>
-              <li><a href="#testimonials" className="nav-link">Testimonials</a></li>
-              <li><Link to="/app/login" className="btn outline">Sign in</Link></li>
-              <li><Link to="/app/register" className="btn primary">Sign up</Link></li>
+              <li>
+                <a href="#features" onClick={e => {e.preventDefault(); setNavOpen(false); document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });}}>Features</a>
+              </li>
+              <li>
+                <a href="#testimonials" onClick={e => {e.preventDefault(); setNavOpen(false); document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' });}}>Testimonials</a>
+              </li>
+              <li><Link to="/app/login" onClick={()=>setNavOpen(false)}>Sign in</Link></li>
+              <li><Link to="/app/register" className="btn" onClick={()=>setNavOpen(false)}>Sign up</Link></li>
             </ul>
           </nav>
         </div>
@@ -215,6 +235,7 @@ const Landing = () => {
         </div>
       </section>
 
+      </main>
       <footer className="footer">
         <div className="container">
           <nav>
@@ -227,30 +248,7 @@ const Landing = () => {
           <p>&copy; 2025 Club-Connect</p>
         </div>
       </footer>
-      </main>
-
-      {showTour && (
-        <div className="modal-overlay" role="dialog" aria-modal="true" aria-label="Product tour" ref={tourCloseRef}>
-          <div className="modal">
-            <button className="modal-close" aria-label="Close tour" onClick={() => setShowTour(false)}>×</button>
-            <div className="modal-content">
-              <h3>Quick tour</h3>
-              <div className="tour-slide">
-                <h4>Discover clubs</h4>
-                <p>Search, filter, and join clubs in seconds.</p>
-              </div>
-              <div className="tour-slide">
-                <h4>Manage events</h4>
-                <p>Track events, RSVP, and get reminders.</p>
-              </div>
-              <div className="tour-slide">
-                <h4>Track participation</h4>
-                <p>Earn badges and view your activity history.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Removed duplicate header/navbar and skip-link */}
     </>
   );
 };

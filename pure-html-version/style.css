@@ -1,0 +1,10 @@
+/* Combine all CSS from Landing.css and index.css here. Paste everything for full styling. */
+
+/* Example: */
+body {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #FFF8F0 0%, #FEFDFB 50%, #F9F9F9 100%);
+  color: #333;
+}
+
+/* ...rest of your CSS... */
