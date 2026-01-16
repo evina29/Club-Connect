@@ -1,6 +1,64 @@
+<<<<<<< HEAD
 /* Force Outfit font for headings, navbar, and buttons */
 h1, h2, h3, h4, h5, h6, .navbar, .navbar-links a, button, .btn, .sidebar-logo {
   font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+=======
+/* Sidebar navbar for dashboard */
+.sidebar-navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 64px;
+  background: #fff;
+  border-right: 1px solid #e6eef8;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1002;
+}
+.sidebar-navbar .navbar-links {
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.sidebar-navbar .navbar-links li {
+  width: 100%;
+  text-align: center;
+}
+.sidebar-navbar .navbar-links a {
+  display: block;
+  padding: 0.5rem 0;
+  color: #6EB5FF;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+.sidebar-navbar .navbar-links a:hover {
+  background: #f7fafc;
+}
+@media (max-width: 900px) {
+  .sidebar-navbar {
+    width: 48px;
+  }
+  .sidebar-navbar .navbar-links {
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .sidebar-navbar .navbar-links a {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .sidebar-navbar {
+    width: 40px;
+  }
+  .sidebar-navbar .navbar-links a {
+    font-size: 0.95rem;
+    padding: 0.4rem 0;
+  }
+>>>>>>> cd51217 (Full mobile responsiveness, sidebar dashboard nav, and bugfixes)
 }
 /* App.css - Modern Dashboard Layout */
 

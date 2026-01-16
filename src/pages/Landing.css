@@ -1,3 +1,103 @@
+@media (max-width: 600px) {
+  html, body {
+    width: 100vw;
+    min-width: 100vw;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  .container, .container.hero-inner, .section, .features-grid, .testimonials-grid, .stats, .feature-card, .testimonial-card, .stat, .faq-accordion, .footer .container {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 100vw !important;
+    box-sizing: border-box;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .hero, .section {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .landing-navbar {
+    padding: 0.5rem 0.5rem;
+  }
+  .landing-navbar .logo {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+  }
+  .hero {
+    padding: 2.5rem 0.5rem 1rem 0.5rem;
+    min-height: unset;
+    text-align: center;
+  }
+  .container, .container.hero-inner {
+    width: 100vw;
+    max-width: 100vw;
+    padding: 0 4px;
+    box-sizing: border-box;
+  }
+  .hero-content h1 {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+  .hero-content p {
+    font-size: 0.97rem;
+    margin-bottom: 1rem;
+  }
+  .hero-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+    margin-bottom: 0.5rem;
+  }
+  .btn.primary, .btn.outline, .btn {
+    width: 100%;
+    font-size: 1rem;
+    min-width: 0;
+    padding: 0.7rem 0.5rem;
+    border-radius: 14px;
+    margin-bottom: 0.5rem;
+  }
+  .feature-card, .testimonial-card, .stat {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    padding: 1rem 0.7rem;
+    border-radius: 14px;
+  }
+  .features-grid, .testimonials-grid, .stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .faq-accordion {
+    gap: 0.5rem;
+  }
+  .cta .btn {
+    width: 100%;
+    font-size: 1.1rem;
+  }
+  .footer .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+  .footer nav ul {
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0;
+  }
+  .footer nav ul li {
+    width: 100%;
+    text-align: left;
+  }
+  h1, h2, h3, h4 {
+    word-break: break-word;
+  }
+}
 /* Hamburger styles */
 .hamburger {
   display: none;
