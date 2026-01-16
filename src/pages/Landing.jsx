@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Landing.css';
 
+const isMobile = () => window.matchMedia && window.matchMedia('(max-width: 600px)').matches;
+
 const Landing = () => {
   const [navOpen, setNavOpen] = useState(false);
   const location = useLocation();
@@ -87,111 +89,92 @@ const Landing = () => {
     };
   }, [showTour]);
 
-  
+  const [mobile, setMobile] = useState(isMobile());
+  useEffect(() => {
+    const handler = () => setMobile(isMobile());
+    window.addEventListener('resize', handler);
+    return () => window.removeEventListener('resize', handler);
+  }, []);
 
   return (
     <>
       <a className="skip-link" href="#main">Skip to content</a>
       <header className="landing-navbar" role="banner">
-        <div className="container" style={{position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '56px'}}>
+        <div className="container" style={{position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'space-between', minHeight: '56px'}}>
           <div className="logo" style={{fontSize: '1.3rem', fontWeight: 700}}>🏫 Club-Connect</div>
+          <nav>
+            <ul style={{display: 'flex', gap: '1.5rem', listStyle: 'none', margin: 0, padding: 0}}>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+              <li><a href="#cta">Get Started</a></li>
+            </ul>
+          </nav>
         </div>
       </header>
-
-      <section className="hero" style={{paddingTop: '1.5rem', paddingBottom: '0.5rem'}}>
-        <div className="container hero-inner" style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem'}}>
-          <div className="hero-content" style={{width: '100%', maxWidth: 420, textAlign: 'center'}}>
-            <h2 style={{fontSize: '1.3rem', fontWeight: 600, margin: '0 0 0.5rem 0', color: '#222'}}>The future of student clubs happens <em>together</em></h2>
-            <p style={{fontSize: '1rem', color: '#444', margin: '0 0 1rem 0'}}>Student connection endures. Club-Connect brings students, clubs, and opportunities together in one simple platform.</p>
-            <Link to="/app/register" className="btn primary" style={{width: '100%', fontSize: '1.1rem', marginBottom: 8}}>Sign up for ClubConnect</Link>
-            <div style={{margin: '0.5rem 0 0.5rem 0'}}>
-              <span style={{fontSize: '0.98rem', color: '#666'}}>Already have an account? </span>
-              <Link to="/app/login" style={{fontSize: '0.98rem', color: '#6EB5FF', textDecoration: 'underline'}}>Sign in</Link>
-            </div>
-            <div style={{marginBottom: 8}}>
-              <button className="btn-link" style={{background: 'none', border: 'none', color: '#7ED957', fontSize: '0.98rem', textDecoration: 'underline', cursor: 'pointer', padding: 0}} onClick={() => setShowTour(true)} aria-haspopup="dialog">Take a quick tour</button>
-            </div>
-          </div>
-          {/* App-style preview: Upcoming events */}
-          <div className="app-preview" style={{width: '100%', maxWidth: 420, background: '#fff', borderRadius: 14, boxShadow: '0 2px 12px rgba(110,181,255,0.08)', margin: '0.5rem 0 0 0', padding: '1rem 1.2rem'}}>
-            <div style={{display: 'flex', alignItems: 'center', marginBottom: 8}}>
-              <span style={{fontSize: '1.1rem', fontWeight: 600, color: '#6EB5FF', marginRight: 8}}>Upcoming events</span>
-              <span style={{fontSize: '1.2rem'}}>📅</span>
-            </div>
-            <ul style={{listStyle: 'none', padding: 0, margin: 0}}>
-              <li style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid #F0F4F8'}}>
-                <span style={{fontWeight: 500}}>Art Club Meeting</span>
-                <span style={{fontSize: '0.95rem', color: '#888'}}>Today 3:30pm</span>
-              </li>
-              <li style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '6px 0'}}>
-                <span style={{fontWeight: 500}}>Robotics Kickoff</span>
-                <span style={{fontSize: '0.95rem', color: '#888'}}>Tomorrow 4:00pm</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
       <main id="main">
-      <section id="features" className="section features" aria-labelledby="features-heading" style={{paddingTop: '1.2rem'}}>
-        <div className="container" style={{maxWidth: 420, margin: '0 auto'}}>
-          <div className="feature-card app-feature-card" style={{display: 'flex', alignItems: 'center', gap: 12, padding: '0.8rem 1rem', borderRadius: 12, boxShadow: '0 1px 6px rgba(110,181,255,0.07)', marginBottom: 12, cursor: 'pointer', border: '1.5px solid #F0F4F8'}}>
-            <span style={{fontSize: '1.5rem', marginRight: 8}}>🧑‍🤝‍🧑</span>
-            <div style={{flex: 1}}>
-              <div style={{fontWeight: 600, fontSize: '1.08rem'}}>Discover & Join Clubs <span style={{fontSize: '1.1rem', color: '#6EB5FF'}}>→</span></div>
-              <div style={{fontSize: '0.97rem', color: '#666', marginTop: 2}}>Browse all clubs, join instantly, and get access to exclusive content.</div>
+        <section id="features" className="section features" aria-labelledby="features-heading" style={{paddingTop: '1.2rem'}}>
+          <div className="container" style={{maxWidth: 420, margin: '0 auto'}}>
+            <div className="feature-card app-feature-card" style={{display: 'flex', alignItems: 'center', gap: 12, padding: '0.8rem 1rem', borderRadius: 12, boxShadow: '0 1px 6px rgba(110,181,255,0.07)', marginBottom: 12, cursor: 'pointer', border: '1.5px solid #F0F4F8'}}>
+              <span style={{fontSize: '1.5rem', marginRight: 8}}>🧑‍🤝‍🧑</span>
+              <div style={{flex: 1}}>
+                <div style={{fontWeight: 600, fontSize: '1.08rem'}}>Discover & Join Clubs <span style={{fontSize: '1.1rem', color: '#6EB5FF'}}>→</span></div>
+                <div style={{fontSize: '0.97rem', color: '#666', marginTop: 2}}>Browse all clubs, join instantly, and get access to exclusive content.</div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Remove testimonials section from mobile landing/auth screen for app-like experience */}
-            </div>
-            <div className="stat">
-              <h3>1000+</h3>
-              <p>Active students</p>
-            </div>
-            <div className="stat">
-              <h3>25%</h3>
-              <p>Increase in club participation</p>
+        </section>
+        <section id="faq" className="section faq" aria-labelledby="faq-heading">
+          <div className="container">
+            <h2 id="faq-heading">Frequently asked questions</h2>
+            <div className="faq-accordion">
+              {faqs.map((faq, index) => (
+                <div key={index} className="faq-item">
+                  <button
+                    id={`faq-${index}-btn`}
+                    className={`faq-question ${openFaq === index ? 'active' : ''}`}
+                    onClick={() => toggleFaq(index)}
+                    aria-expanded={openFaq === index}
+                    aria-controls={`faq-${index}-panel`}
+                  >
+                    <span>{faq.question}</span>
+                    <span className="faq-icon">{openFaq === index ? '−' : '+'}</span>
+                  </button>
+                  <div id={`faq-${index}-panel`} className={`faq-answer ${openFaq === index ? 'open' : ''}`} role="region" aria-labelledby={`faq-${index}-btn`}>
+                    <p>{faq.answer}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="section faq" aria-labelledby="faq-heading">
-        <div className="container">
-          <h2 id="faq-heading">Frequently asked questions</h2>
-          <div className="faq-accordion">
-            {faqs.map((faq, index) => (
-              <div key={index} className="faq-item">
-                <button
-                  id={`faq-${index}-btn`}
-                  className={`faq-question ${openFaq === index ? 'active' : ''}`}
-                  onClick={() => toggleFaq(index)}
-                  aria-expanded={openFaq === index}
-                  aria-controls={`faq-${index}-panel`}
-                >
-                  <span>{faq.question}</span>
-                  <span className="faq-icon">{openFaq === index ? '−' : '+'}</span>
-                </button>
-                <div id={`faq-${index}-panel`} className={`faq-answer ${openFaq === index ? 'open' : ''}`} role="region" aria-labelledby={`faq-${index}-btn`}>
-                  <p>{faq.answer}</p>
+        </section>
+        {/* Hide testimonials and marketing on mobile */}
+        {!mobile && (
+          <>
+            <section id="testimonials" className="section testimonials" aria-label="Testimonials">
+              <div className="container">
+                <h2>Trusted by students and schools nationwide</h2>
+                <div className="testimonials-grid">
+                  <div className="testimonial-card">
+                    <p>"Club-Connect made it so easy to find and join clubs—discovered my passion for art and became club president!"</p>
+                    <div className="testimonial-author">
+                      <strong>Sarah Johnson</strong><br />
+                      Art Club President, University of Example
+                    </div>
+                  </div>
+                  {/* Add more testimonials as needed */}
                 </div>
               </div>
-            ))}
+            </section>
+          </>
+        )}
+        <section id="cta" className="section cta">
+          <div className="container">
+            <h2>Ready to build your college experience?</h2>
+            <p>Join thousands of students already using Club-Connect to discover opportunities and stay connected.</p>
+            <Link to="/app/register" className="btn primary large">Get started for free</Link>
           </div>
-        </div>
-      </section>
-
-      <section className="section cta">
-        <div className="container">
-          <h2>Ready to build your college experience?</h2>
-          <p>Join thousands of students already using Club-Connect to discover opportunities and stay connected.</p>
-          <Link to="/app/register" className="btn primary large">Get started for free</Link>
-        </div>
-      </section>
-
+        </section>
       </main>
       <footer className="footer">
         <div className="container">
