@@ -306,6 +306,8 @@
   margin-bottom: 1.5rem;
   line-height: 1.1;
   color: var(--text-primary);
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  letter-spacing: -0.02em;
 }
 
 .hero h1 em {
