@@ -90,6 +90,20 @@
   background-clip: text;
 }
 
+/* Desktop Navigation */
+.desktop-nav {
+  display: flex;
+}
+
+.desktop-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
 .landing-navbar nav ul {
   list-style: none;
   display: flex;
@@ -732,7 +746,7 @@
     font-size: 1.25rem;
   }
 
-  .landing-navbar nav {
+  .desktop-nav {
     display: none;
   }
 

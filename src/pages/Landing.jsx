@@ -95,6 +95,19 @@ const Landing = () => {
       <header className="landing-navbar" role="banner">
         <div className="container" style={{position: 'relative'}}>
           <div className="logo">🏫 Club-Connect</div>
+          {/* Desktop Navigation */}
+          <nav className="desktop-nav">
+            <ul>
+              <li>
+                <a href="#features" onClick={e => {e.preventDefault(); document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });}}>Features</a>
+              </li>
+              <li>
+                <a href="#testimonials" onClick={e => {e.preventDefault(); document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' });}}>Testimonials</a>
+              </li>
+              <li><Link to="/app/login">Sign in</Link></li>
+              <li><Link to="/app/register" className="btn">Sign up</Link></li>
+            </ul>
+          </nav>
           {/* Hamburger icon for mobile */}
           <button className="hamburger" aria-label="Open navigation" onClick={() => setNavOpen(true)}>
             <span className="bar"></span>
