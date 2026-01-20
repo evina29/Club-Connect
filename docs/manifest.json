@@ -1,0 +1,48 @@
+{
+  "name": "ClubConnect",
+  "short_name": "ClubConnect",
+  "description": "Connect with clubs and opportunities at your school",
+  "start_url": "/Club-Connect/",
+  "display": "standalone",
+  "background_color": "#F9F9F9",
+  "theme_color": "#7ED957",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/Club-Connect/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/Club-Connect/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/Club-Connect/screenshot1.png",
+      "sizes": "540x720",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["education", "social"],
+  "shortcuts": [
+    {
+      "name": "Dashboard",
+      "short_name": "Home",
+      "description": "View your dashboard",
+      "url": "/Club-Connect/app",
+      "icons": [{ "src": "/Club-Connect/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Clubs",
+      "short_name": "Clubs",
+      "description": "Browse clubs",
+      "url": "/Club-Connect/clubs",
+      "icons": [{ "src": "/Club-Connect/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
