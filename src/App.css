@@ -1,84 +1,24 @@
+/* App.css - Modern Dashboard Layout */
+
 /* Ensure italics for emphasized text in headings */
 h1 em, h2 em, h3 em, h4 em, h5 em, h6 em {
   font-style: italic !important;
 }
+
 /* Force Outfit font for headings, navbar, and buttons */
 h1, h2, h3, h4, h5, h6, .navbar, .navbar-links a, button, .btn, .sidebar-logo {
   font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
 }
-/* Sidebar navbar for dashboard */
-.sidebar-navbar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  width: 64px;
-  background: #fff;
-  border-right: 1px solid #e6eef8;
-  box-shadow: 2px 0 8px rgba(0,0,0,0.03);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 1002;
-}
-.sidebar-navbar .navbar-links {
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-.sidebar-navbar .navbar-links li {
-  width: 100%;
-  text-align: center;
-}
-.sidebar-navbar .navbar-links a {
-  display: block;
-  padding: 0.5rem 0;
-  color: #6EB5FF;
-  font-size: 1.2rem;
-  border-radius: 8px;
-  transition: background 0.2s;
-}
-.sidebar-navbar .navbar-links a:hover {
-  background: #f7fafc;
-}
-@media (max-width: 900px) {
-  .sidebar-navbar {
-    width: 48px;
-  }
-  .sidebar-navbar .navbar-links {
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  .sidebar-navbar .navbar-links a {
-    font-size: 1rem;
-  }
-}
-@media (max-width: 600px) {
-  .sidebar-navbar {
-    width: 40px;
-  }
-  .sidebar-navbar .navbar-links a {
-    font-size: 0.95rem;
-    padding: 0.4rem 0;
-  }
-}
-}
-/* App.css - Modern Dashboard Layout */
-
-/* Ensure CSS variables are available */
-* {
-  box-sizing: border-box;
-}
 
 /* Accessibility improvements */
 *:focus-visible {
-  outline: 2px solid #7ED957;
+  outline: 2px solid var(--vibrant-green, #7ED957);
   outline-offset: 2px;
 }
 
 button:focus-visible,
 a:focus-visible {
-  outline: 2px solid #7ED957;
+  outline: 2px solid var(--vibrant-green, #7ED957);
   outline-offset: 2px;
 }
 
@@ -88,7 +28,7 @@ a:focus-visible {
   left: -9999px;
   z-index: 999;
   padding: 1em;
-  background-color: #7ED957;
+  background-color: var(--vibrant-green, #7ED957);
   color: white;
   text-decoration: none;
 }
@@ -102,20 +42,24 @@ a:focus-visible {
 .app {
   min-height: 100vh;
   display: flex;
-  background-color: #F9F9F9;
+  background-color: var(--bg-primary, #F9F9F9);
   animation: fadeIn 300ms ease-out;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Sidebar */
 .sidebar {
   width: 260px;
-  background-color: #FFFFFF;
-  border-right: 1px solid #E5E5E5;
+  background-color: var(--bg-secondary, #FFFFFF);
+  border-right: 1px solid var(--border-color, #E5E5E5);
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -125,8 +69,6 @@ a:focus-visible {
   z-index: 100;
   animation: slideInLeft 200ms cubic-bezier(0.4, 0, 0.2, 1);
   overflow-y: auto;
-  background: #fff;
-  transition: transform 0.3s ease, left 0.3s ease;
 }
 
 @keyframes slideInLeft {
@@ -144,9 +86,9 @@ a:focus-visible {
   padding: 24px 20px;
   font-size: 20px;
   font-weight: 700;
-  color: #333333;
-  border-bottom: 1px solid #E5E5E5;
-  transition: all var(--transition-base);
+  color: var(--text-primary, #333333);
+  border-bottom: 1px solid var(--border-color, #E5E5E5);
+  transition: all var(--transition-base, 200ms);
 }
 
 .sidebar-logo:hover {
@@ -174,21 +116,21 @@ a:focus-visible {
   align-items: center;
   gap: 12px;
   padding: 12px 20px;
-  color: #666666;
+  color: var(--text-secondary, #666666);
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
-  transition: all var(--transition-base);
+  transition: all var(--transition-base, 200ms);
   position: relative;
 }
 
 .sidebar-nav a:hover {
-  color: #333333;
+  color: var(--text-primary, #333333);
   background-color: rgba(126, 217, 87, 0.1);
 }
 
 .sidebar-nav a.active {
-  color: #7ED957;
+  color: var(--vibrant-green, #7ED957);
   background-color: rgba(126, 217, 87, 0.15);
 }
 
@@ -199,7 +141,7 @@ a:focus-visible {
   top: 0;
   bottom: 0;
   width: 3px;
-  background-color: #7ED957;
+  background-color: var(--vibrant-green, #7ED957);
 }
 
 .sidebar-nav .nav-icon {
@@ -210,7 +152,7 @@ a:focus-visible {
 
 .sidebar-footer {
   padding: 16px 20px;
-  border-top: 1px solid #E5E5E5;
+  border-top: 1px solid var(--border-color, #E5E5E5);
 }
 
 .sidebar-profile {
@@ -219,19 +161,19 @@ a:focus-visible {
   gap: 12px;
   padding: 8px;
   border-radius: 8px;
-  transition: background-color var(--transition-base);
+  transition: background-color var(--transition-base, 200ms);
   cursor: pointer;
 }
 
 .sidebar-profile:hover {
-  background-color: var(--bg-tertiary);
+  background-color: var(--bg-tertiary, #F9F9F9);
 }
 
 .sidebar-avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-green));
+  background: linear-gradient(135deg, var(--accent-primary, #3A8DFF), var(--accent-green, #7ED957));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -247,12 +189,12 @@ a:focus-visible {
 .sidebar-profile-name {
   font-size: 14px;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--text-primary, #333333);
 }
 
 .sidebar-profile-school {
   font-size: 12px;
-  color: var(--text-secondary);
+  color: var(--text-secondary, #666666);
 }
 
 /* Main Content */
@@ -280,68 +222,18 @@ a:focus-visible {
   display: none;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .sidebar {
-    display: none !important;
-  }
-  .main-content {
-    margin-left: 0 !important;
-    width: 100vw !important;
-    min-width: 0 !important;
-    max-width: 100vw !important;
-    padding: 0 0 60px 0 !important;
-    background: #F9F9F9 !important;
-  }
-  .navbar {
-    display: flex;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: var(--bg-secondary);
-    border-top: 1px solid var(--border-color);
-    justify-content: space-around;
-    padding: 8px 0;
-    z-index: 99;
-  }
-  
-  .navbar-links {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .navbar-links a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    color: var(--text-secondary);
-    font-size: 12px;
-    padding: 8px 16px;
-  }
-  
-  .navbar-links a:hover,
-  .navbar-links a.active {
-    color: var(--accent-primary);
-  }
-}
-
+/* Card Components */
 .card {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
+  background-color: var(--bg-card, var(--bg-secondary, #FFFFFF));
+  border: 1px solid var(--border-color, #E5E5E5);
   border-radius: 12px;
   padding: 16px;
   margin: 8px 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .btn {
-  background-color: var(--primary-color);
+  background-color: var(--accent-primary, #3A8DFF);
   color: white;
   border: none;
   border-radius: 8px;
@@ -349,49 +241,52 @@ a:focus-visible {
   cursor: pointer;
   font-size: 14px;
   margin: 4px;
-  min-height: 44px; /* Touch-friendly */
+  min-height: 44px;
+  transition: all var(--transition-base, 200ms);
 }
 
 .btn:hover {
-  background-color: #138496; /* Darker teal */
+  opacity: 0.9;
+  transform: translateY(-1px);
 }
 
 .btn-outline {
   background-color: transparent;
-  color: var(--primary-color);
-  border: 1px solid var(--primary-color);
+  color: var(--accent-primary, #3A8DFF);
+  border: 1px solid var(--accent-primary, #3A8DFF);
 }
 
 .btn-outline:hover {
-  background-color: var(--primary-color);
+  background-color: var(--accent-primary, #3A8DFF);
   color: white;
 }
 
 .btn-success {
-  background-color: var(--accent-color);
+  background-color: var(--accent-green, #7ED957);
 }
 
 .btn-danger {
-  background-color: var(--error-color);
+  background-color: var(--accent-red, #EF4444);
 }
 
 .input {
   width: 100%;
   padding: 10px;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-color, #E5E5E5);
   border-radius: 8px;
   margin: 8px 0;
   font-size: 14px;
   min-height: 44px;
+  box-sizing: border-box;
 }
 
 .error {
-  color: var(--error-color);
+  color: var(--accent-red, #EF4444);
   font-size: 12px;
 }
 
 .badge {
-  background-color: var(--accent-color);
+  background-color: var(--accent-green, #7ED957);
   color: white;
   padding: 4px 8px;
   border-radius: 12px;
@@ -423,7 +318,7 @@ a:focus-visible {
 
 .club-card p, .event-card p {
   margin: 4px 0;
-  color: #666;
+  color: var(--text-secondary, #666666);
 }
 
 .horizontal-scroll {
@@ -438,12 +333,12 @@ a:focus-visible {
   flex-shrink: 0;
 }
 
-/* Mobile responsive */
+/* Responsive Design */
 @media (max-width: 1024px) {
   .sidebar {
     width: 220px;
   }
-  
+
   .main-content {
     margin-left: 220px;
     padding: 16px;
@@ -454,36 +349,42 @@ a:focus-visible {
   .app {
     flex-direction: column;
   }
-  
+
   .sidebar {
     width: 100%;
     height: auto;
     position: relative;
     border-right: none;
-    border-bottom: 1px solid var(--border-color, #1F2937);
+    border-bottom: 1px solid var(--border-color, #E5E5E5);
     overflow-y: visible;
+    transform: translateX(-100%);
   }
-  
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
   .sidebar-logo {
     padding: 16px 20px;
     font-size: 18px;
   }
-  
+
   .sidebar-nav {
     display: none;
   }
-  
+
   .sidebar.mobile-open .sidebar-nav {
     display: flex;
   }
-  
+
   .main-content {
     margin-left: 0;
     padding: 12px;
     padding-bottom: 80px;
   }
-  
+
   .navbar {
+    display: flex;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -491,39 +392,53 @@ a:focus-visible {
     height: 60px;
     z-index: 200;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .nav-links {
+    background-color: var(--bg-secondary, #FFFFFF);
+    border-top: 1px solid var(--border-color, #E5E5E5);
     justify-content: space-around;
+    padding: 8px 0;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    list-style: none;
+    margin: 0;
     padding: 0 10px;
   }
-  
+
   .nav-link {
+    display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 4px;
     font-size: 0.75rem;
     padding: 8px;
+    color: var(--text-secondary, #666666);
+    text-decoration: none;
+    min-height: 44px;
+    justify-content: center;
   }
-  
+
   .nav-link-icon {
     font-size: 1.25rem;
   }
-  
+
   .card {
     margin: 8px 0;
     padding: 16px;
   }
-  
+
   .greeting {
     font-size: 20px;
     margin: 12px 0;
   }
-  
+
   .section-title {
     font-size: 16px;
     margin: 12px 0 8px 0;
   }
-  
+
   .horizontal-scroll .card {
     min-width: 180px;
   }
@@ -531,42 +446,39 @@ a:focus-visible {
 
 @media (max-width: 480px) {
   .main-content {
-    padding: 0 0 60px 0 !important;
-    width: 100vw !important;
-    min-width: 0 !important;
-    max-width: 100vw !important;
+    padding: 8px;
   }
-  
+
   .card {
     padding: 12px;
     margin: 6px 0;
   }
-  
+
   .greeting {
     font-size: 18px;
   }
-  
+
   .section-title {
     font-size: 14px;
   }
-  
+
   .nav-link {
     font-size: 0.6875rem;
     padding: 6px;
   }
-  
+
   .nav-link-icon {
     font-size: 1.125rem;
   }
-  
+
   .horizontal-scroll .card {
     min-width: 160px;
   }
-  
+
   .club-card h3, .event-card h3 {
     font-size: 14px;
   }
-  
+
   .club-card p, .event-card p {
     font-size: 12px;
   }
@@ -578,17 +490,17 @@ a:focus-visible {
     height: auto;
     overflow-y: visible;
   }
-  
+
   .main-content {
     padding-bottom: 20px;
   }
-  
+
   .navbar {
     position: relative;
   }
 }
 
-/* Accessibility helper classes applied to <html> by AccessibilityChatbot */
+/* Accessibility helper classes */
 .a11y-high-contrast {
   --bg-primary: #000 !important;
   --bg-secondary: #111 !important;
@@ -597,6 +509,16 @@ a:focus-visible {
   background-color: #000 !important;
   color: #fff !important;
 }
-.a11y-large-text { font-size: 115%; }
-.a11y-dyslexic { font-family: 'OpenDyslexic', 'Arial', sans-serif !important; }
-.a11y-focus-outline *:focus { outline: 3px dashed #FFD166 !important; outline-offset: 3px !important; }
+
+.a11y-large-text {
+  font-size: 115%;
+}
+
+.a11y-dyslexic {
+  font-family: 'OpenDyslexic', 'Arial', sans-serif !important;
+}
+
+.a11y-focus-outline *:focus {
+  outline: 3px dashed #FFD166 !important;
+  outline-offset: 3px !important;
+}
