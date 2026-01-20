@@ -1,8 +1,6 @@
-# ClubConnect 🏆
+ClubConnect 🏆
 
-**Award-Winning Student Club Management Platform**
-
-ClubConnect is a comprehensive, competition-grade web application designed to revolutionize how students engage with school clubs and extracurricular activities. Built with cutting-edge technologies and incorporating 15+ advanced features for international-level competition.
+ClubConnect is a comprehensive, competition-grade web application designed to revolutionize how students engage with school clubs and extracurricular activities. Built with cutting-edge technologies and incorporating 15+ advanced features for BPA Mobile Applications.
 
 ## 🌟 Core Features
 
